@@ -6,20 +6,17 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import {sieve} from './utilities/sieve';
 
 function App() {
 
   const [startValue, setStartValue] = useState("");
   const [endValue, setEndValue] = useState("");
-  const [primeNumbers, setPrimeNumbers] = useState<Array<Number>>([1,2,3]);
-
-  const setValues = () => {
-    let a = 1;
-    let b = 2;
-  };
+  const [primeNumbers, setPrimeNumbers] = useState<Array<number>>([]);
 
   const onSubmit = () => {
-    console.log(startValue, endValue);
+    const myArray = sieve(+startValue, +endValue);
+    setPrimeNumbers(myArray)
   };
 
 
@@ -71,7 +68,7 @@ function App() {
 The prime numbers are displayed here:
 </Col>
 </Row>
-    {primeNumbers.map(number => 
+    {primeNumbers.length > 0 && primeNumbers.map(number => 
       
       
       <Row>
