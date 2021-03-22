@@ -1,4 +1,4 @@
-import {sieve} from '../utilities/sieve';
+import {sieve} from './utilities/sieve';
 
 test('Returns 2, 3, 5, 7 for range 1-10', () => {
     const a : number[] = sieve(1, 10)
@@ -16,4 +16,4 @@ test('Returns 2, 3, 5, 7 for range 1-10', () => {
     expect(b).toContain(19)
   });
 
-
+// TODO add tests covering negative numbers, large numbers, etc. Haven't added them in the intrests of time 
